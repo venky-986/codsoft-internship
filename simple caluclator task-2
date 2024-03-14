@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+double add(double x, double y) {
+    return x + y;
+}
+double subtract(double x, double y) {
+    return x - y;
+}
+double multiply(double x, double y) {
+    return (x * y);
+}
+double divide(double x, double y) {
+    if (y != 0) {
+        return (x / y);
+    } else {
+        cout << "invalid" << endl;
+        return 0;  
+    }
+}
+int main() {
+    double num1, num2, result;
+    char choice;
+    do {
+        cout << "enter first number: ";
+        cin >> num1;
+        cout << "enter second number: ";
+        cin >>num2;
+        cout <<"\nchoose operation:" << endl;
+        cout << "1. addition" << endl;
+        cout <<"2. subtraction" << endl;
+        cout << "3. multiplication"<< endl;
+        cout <<"4. division" << endl;
+        cout << "0. exit"<< endl;
+
+        cout << "\nenter choice (0-4): ";
+        cin >> choice;
+
+        switch (choice) {
+            case '0':
+                cout <<"exist"<< endl;
+                break;
+            case '1':
+                result=add(num1,num2);
+                cout<< num1 <" + "<< num2 << " = "<< result << endl;
+                break;
+            case '2':
+                result =subtract(num1, num2);
+                cout <<num1 << " - " << num2 <<" = "<< result << endl;
+                break;
+            case '3':
+                result=multiply(num1, num2);
+                cout <<num1 <<" * " << num2 <<" = "<< result << endl;
+                break;
+            case '4':
+                result=divide(num1, num2);
+                break;
+            default:
+                cout<<"Invalid choice." << endl;
+        }
+    } while (choice!= '0');
+
+    return 0;
+}
